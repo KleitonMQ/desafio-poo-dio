@@ -40,8 +40,8 @@ public class Bootcamp {
     public Set<Dev> getDevInscritos(){
         return devsInscritos;
     }
-    public void setConteudos(Set<Conteudo> conteudos){
-        this.conteudos = conteudos;
+    public void setConteudos(Set<Conteudo> conteudo){
+        conteudos.add((Conteudo) conteudo);
     }
     public Set<Conteudo> getConteudos(){
         return conteudos;

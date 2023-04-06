@@ -19,7 +19,7 @@ public class Curso extends Conteudo {
 
     @Override
     public String toString() {
-        return "----------------\nMentoria\n" + "titulo= " + getTitulo() + "\n" + "descicao= " + getDescricao() + "\n" + "cargaHoraria= " + cargaHoraria;
+        return "Curso: " + "titulo= " + getTitulo() + " , " + "descicao= " + getDescricao() + " , " + "cargaHoraria= " + cargaHoraria+"\n";
     }
 
 

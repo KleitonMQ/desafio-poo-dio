@@ -1,6 +1,8 @@
 import java.time.LocalDate;
 
+import main.java.Bootcamp;
 import main.java.Curso;
+import main.java.Dev;
 import main.java.Mentoria;
 
 public class Main {
@@ -20,15 +22,35 @@ public class Main {
         curso3.setDescricao("Maveando o projeto.");
         curso3.setCargaHoraria(6);
     
-        System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(curso3);
-
         Mentoria mentoria1 = new Mentoria();
         mentoria1.setTitulo("Como se tornar um coach chato.");
         mentoria1.setDescricao("Aprenda encher o saco dos amigos com frases motivacionais.");
         mentoria1.setData(LocalDate.now());
 
-        System.out.println(mentoria1);
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescricao("Proposta do bootcamp descritas aqui");
+
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(curso3);
+        bootcamp.getConteudos().add(mentoria1);
+
+        Dev devkleiton = new Dev();
+        devkleiton.setNome("Kleiton");
+        devkleiton.inscreverBootcamp(bootcamp);
+        devkleiton.progredir();
+
+        System.out.println("Conteudos inscritos " + devkleiton.getNome() + "\n " + devkleiton.getConteudosInscritos());
+        System.out.println("Conteudos concluidos " + devkleiton.getNome() + "\n " + devkleiton.getConteudosConcluidos());
+        System.out.println("XP total: " + devkleiton.calcularTotalXp());
+        Dev devFabricio = new Dev();
+        devFabricio.setNome("Fabricio");
+        devFabricio.inscreverBootcamp(bootcamp);
+        devFabricio.progredir();
+        devFabricio.progredir();
+        System.out.println("Conteudos inscritos " + devFabricio.getNome() + "\n " + devFabricio.getConteudosInscritos());
+        System.out.println("Conteudos concluidos " + devFabricio.getNome() + "\n " + devFabricio.getConteudosConcluidos());
+        System.out.println("XP total: " + devFabricio.calcularTotalXp());
     }
 }
